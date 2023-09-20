@@ -21,7 +21,6 @@ function SignUp({ setUsers, users }) {
     )
     const navigate = useNavigate()
 
-
     const changeHandler = (e) => {
         setInput(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
@@ -30,7 +29,7 @@ function SignUp({ setUsers, users }) {
     }
 
     const clickHandler = async () => {
-        if (input.name, input.surname, input.location, input.email, input.password, !users.find(el => el.email === input.email) ) {
+        if (input.name !== '' && input.surname !== '' && input.location !== '' && input.email !== '' && input.password !== '' && typeof input.img === 'object' && !users.find(el => el.email === input.email) ) {
             //form data
             const formData = new FormData()
             formData.append('name', input.name)
@@ -40,7 +39,6 @@ function SignUp({ setUsers, users }) {
             formData.append('password', input.password)
             formData.append('img', input.img)
             const resp = await axios.post('http://localhost:8001/newuser', formData)
-            console.log(formData);
 
             setInput({
                 name: '',

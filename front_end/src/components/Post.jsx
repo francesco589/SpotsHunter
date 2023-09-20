@@ -12,7 +12,8 @@ function Post({ posts, setPosts, users, cookies }) {
         setAddBtn(prev => (!prev))
     }
     const delHandler = async (ev, id) => {
-        if (cookies.currentUser._id === id.userID) {
+        
+        if (cookies.currentUser._id === id.userID, confirm('are you sure?')) {
             await axios.delete('http://localhost:8001/deletepost/' + id._id)
             setPosts(prev => prev.filter(el => el._id !== id._id))
             setTimeout(() => {

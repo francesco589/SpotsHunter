@@ -1,5 +1,5 @@
 import { User } from "../config/db.js"
-
+import fs from 'fs'
 
 class ControllerUsers {
 
@@ -27,6 +27,17 @@ class ControllerUsers {
                     res.status(500).json({ error: true, message: err.message })
                 })
     }
+
+    static async deleteUser(req, res) {
+
+        const users = await User.find()
+        const img = users.filter(e => e._id == req.params.id)[0].img;
+        fs.rm(`./images/users/${img}`, () => console.log('removed'))
+
+        const respon = await User.findByIdAndDelete(req.params.id)
+        res.json(respon)
+    }
+
 }
 
 export default ControllerUsers

@@ -9,7 +9,7 @@ const router = express.Router()
 router
     .get('/getusers', ControllerUsers.getUsers)
     .post('/newuser', uploadUser.single('img'), ControllerUsers.newUser)
-    .delete('/deleteuser')
+    .delete('/deleteuser/:id', ControllerUsers.deleteUser)
     .patch('edituser')
 
     .get('/getposts', ControllerPosts.getPosts)

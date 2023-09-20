@@ -1,4 +1,3 @@
-import { log } from "console"
 import { Spot } from "../config/db.js"
 import fs from 'fs'
 
@@ -9,7 +8,6 @@ class ControllerPosts {
         const posts = await Spot.find()
         res.json(posts)
     }
-
 
     static addPost(req, res) {
         const spot = new Spot({

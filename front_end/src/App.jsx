@@ -42,7 +42,7 @@ function App() {
         <Route path='/logged/home' element={<Home posts={posts} users={users} />} />
         <Route path='/logged/editplace/:id' element={<EditPost cookies={cookies} setPosts={setPosts} posts={posts} />} />
         <Route path='/logged/addaplace' element={<AddPost cookies={cookies} setPosts={setPosts} />} />
-        <Route path='/logged/user/:id' element={<User   />} />
+        <Route path='/logged/user/:id' element={<User cookies={cookies} users={users} setUsers={setUsers} posts={posts} setPosts={setPosts} removeCookie={removeCookie} />} />
       </Routes>
 
 

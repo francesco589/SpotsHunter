@@ -22,13 +22,12 @@ function EditPost({ cookies, setPosts, posts }) {
     }
     const clickHandler = async () => {
         //if image
-        if (input.name, input.description, input.address, typeof input.image === 'object') {
+        if (input.name !== '' && input.description !== '' && input.address !== '' && typeof input.image === 'object') {
             const formData = new FormData()
             formData.append('name', input.name)
             formData.append('description', input.description)
             formData.append('address', input.address)
             formData.append('image', input.image)
-            
             const resp = await axios.patch('http://localhost:8001/editpost/' + input._id, formData)
             setInput({
                 name: '',
@@ -46,12 +45,12 @@ function EditPost({ cookies, setPosts, posts }) {
             }, 2000);
         }
         // if not image
-         else if (input.name, input.description, input.addres, typeof input.image === 'string' ) {
+         else if (input.name !== '' && input.description !== '' && input.address !== '' && typeof input.image === 'string') {
+            
                 const formData = new FormData()
             formData.append('name', input.name)
             formData.append('description', input.description)
             formData.append('address', input.address)
-
             const resp = await axios.patch('http://localhost:8001/editpost/' + input._id, formData)
             setInput({
                 name: '',

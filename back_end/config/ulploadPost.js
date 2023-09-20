@@ -1,6 +1,6 @@
 import multer from "multer";
 
-const dat = `-${new Date().getHours()}-${new Date().getMinutes()}`
+const dat = `${new Date().getHours()}${new Date().getMinutes()}`
 
 var storage = multer.diskStorage(
     {
