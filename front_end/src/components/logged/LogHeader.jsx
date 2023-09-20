@@ -28,10 +28,11 @@ function LogHeader({ cookies, removeCookie }) {
 
                     </div>
                     <ul className="gap-3 hidden md:flex items-center">
-                        <li><Link to=''>Add a Place</Link></li>
-                        <li><Link to='/logged'>{cookies.currentUser.name}</Link></li>
+                        <li><Link to='/logged/Home'>Home</Link></li>
+                        <li><Link to='/logged/addaplace'>Add a Place</Link></li>
+                        <li><Link to={'/logged/user/' + cookies.currentUser._id}>{cookies.currentUser.name}</Link></li>
                         <li>
-                            <img className=' w-10 rounded-full' src={`http://localhost:8001/${cookies.currentUser.img}`} alt="" />
+                            <img className=' w-10 h-10 rounded-full' src={`http://localhost:8001/users/${cookies.currentUser.img}`} alt="" />
                         </li>
                         <li>
                             <button onClick={signOff}>
@@ -44,13 +45,13 @@ function LogHeader({ cookies, removeCookie }) {
                 </nav>
             </div>
             <nav >
-                <ul className={click ? 'border border-top border-lime-400 w-full p-2 flex justify-end items-center gap-2' : 'hidden'}>
-                    
-                    <li><Link to=''>Add a Place</Link></li>
-                    <li><Link to='/logged'>{cookies.currentUser.name}</Link></li>
-                        <li>
-                            <img className=' h-12 rounded-full' src={`http://localhost:8001/${cookies.currentUser.img}`} alt="" />
-                        </li>
+                <ul className={click ? 'md:hidden border border-top border-lime-400 w-full p-2 flex justify-end items-center gap-2' : 'hidden'}>
+                    <li><Link to='/logged/home'>Home</Link></li>
+                    <li><Link to='/logged/addaplace'>Add a Place</Link></li>
+                    <li><Link to={'/logged/user/' + cookies.currentUser._id}>{cookies.currentUser.name}</Link></li>
+                    <li>
+                        <img className=' h-10 w-10 border border-spacing-2 border-lime-700 rounded-full' src={`http://localhost:8001/users/${cookies.currentUser.img}`} alt="" />
+                    </li>
                     <li>
                         <button onClick={signOff}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

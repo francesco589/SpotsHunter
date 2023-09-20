@@ -31,7 +31,7 @@ function Header() {
             </nav>
             </div>
             <nav >
-                <ul className={click ? 'border border-top border-lime-400 w-full p-2 flex justify-end gap-2':'hidden'}>
+                <ul className={click ? 'md:hidden border border-top border-lime-400 w-full p-2 flex justify-end gap-2':'hidden'}>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/login'>Login</Link></li>
                     <li><Link to='/signup'>SignUp</Link></li>

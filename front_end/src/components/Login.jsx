@@ -22,7 +22,7 @@ function Login({ users, setCookie }) {
         if (logUser) {
             setCookie('currentUser', logUser, cookiesOptions)
             setShowRend(prev => ({ ...prev, isLogged: true }))
-            setTimeout(() => { setShowRend(prev => ({ ...prev, isLogged: false })), navigate('/logged') }, 2000)
+            setTimeout(() => { setShowRend(prev => ({ ...prev, isLogged: false })), navigate('/logged/home') }, 2000)
         }
         else {
             setShowRend(prev => ({ ...prev, isFilled: true }))

@@ -27,7 +27,7 @@ const spotSchema = new mongoose.Schema({
     description: { type: String, required: true },
     userID: { type: String, required: true },
     address: { type: String, required: true },
-    images: { type: String, required: true },
+    image: { type: String, required: true },
     date: { type: Date, required: true }
 })
 

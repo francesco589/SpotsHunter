@@ -1,7 +1,7 @@
-import { User, Spot } from "../config/db.js"
+import { User } from "../config/db.js"
 
 
-class Controller {
+class ControllerUsers {
 
 
     static async getUsers(req, res) {
@@ -29,4 +29,4 @@ class Controller {
     }
 }
 
-export default Controller
+export default ControllerUsers

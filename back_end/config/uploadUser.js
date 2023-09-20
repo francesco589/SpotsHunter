@@ -4,7 +4,7 @@ const dat = `${new Date().getHours()}-${new Date().getMinutes()}`
 
 var storage = multer.diskStorage(
     {
-        destination: './public',
+        destination: './images/users',
         filename: function ( req, file, cb ) {
             cb( null, `${req.body.name}${req.body.surname}${dat}.${file.originalname.split('.').splice(1).join()}` )
         }
@@ -12,6 +12,6 @@ var storage = multer.diskStorage(
 );
 
 
-const upload = multer({storage: storage})
+const uploadUser = multer({storage: storage})
 
-export default upload
+export default uploadUser
