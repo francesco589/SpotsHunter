@@ -19,7 +19,7 @@ function User({ cookies, posts, users, setPosts, removeCookie, setUsers }) {
                 axios.delete('http://localhost:8001/deleteuser/' + cookies.currentUser._id)
                     .then(res => setUsers(prev => (prev.filter(el => el._id !== res.data._id))))
                 navigate('/logged/home'),
-                    removeCookie('currentUser')
+                removeCookie('currentUser')
             }, 3000);
 
         }
@@ -27,12 +27,12 @@ function User({ cookies, posts, users, setPosts, removeCookie, setUsers }) {
 
     return (
         <section className='bg-lime-100 flex flex-col p-5 gap-5 items-center text-lime-700'>
-            <nav className='flex gap-3'>
+            <nav className='flex gap-3 justify-between w-full'>
                 <ul>
-                    <button onClick={delHandler}>delete your Profile</button>
+                    <button className='bg-red-300 p-2 rounded-xl' onClick={delHandler}>delete your Profile</button>
                 </ul>
                 <ul>
-                    <Link>edit your profile</Link>
+                    <Link to={'/logged/user/edituser/'+ cookies.currentUser._id}>edit your profile</Link>
                 </ul>
             </nav>
             <h1>Hello {cookies.currentUser.name}!</h1>

@@ -10,7 +10,7 @@ router
     .get('/getusers', ControllerUsers.getUsers)
     .post('/newuser', uploadUser.single('img'), ControllerUsers.newUser)
     .delete('/deleteuser/:id', ControllerUsers.deleteUser)
-    .patch('edituser')
+    .patch('/edituser/:id', uploadUser.single('img'), ControllerUsers.editUser)
 
     .get('/getposts', ControllerPosts.getPosts)
     .post('/newpost', uploadPost.single('image'), ControllerPosts.addPost)

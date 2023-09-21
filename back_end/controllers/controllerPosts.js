@@ -49,7 +49,7 @@ class ControllerPosts {
                 address: req.body.address,
                 date: new Date()
             }
-            uresp = await Spot.findByIdAndUpdate(req.params.id, uPost, {new:true})
+            uresp = await Spot.findByIdAndUpdate(req.params.id, uPost, { new: true })
             res.json(uresp)
         }
         else {
@@ -60,15 +60,13 @@ class ControllerPosts {
                 image: req.file.filename,
                 date: new Date()
             },
-            posts = await Spot.find()
+                posts = await Spot.find()
             const img = posts.filter(e => e._id == req.params.id)[0].image;
             fs.rm(`./images/posts/${img}`, () => console.log('removed'))
-                
-            uresp = await Spot.findByIdAndUpdate(req.params.id, uPost, {new:true})
+
+            uresp = await Spot.findByIdAndUpdate(req.params.id, uPost, { new: true })
             res.json(uresp)
         }
-
-
 
     }
 }
