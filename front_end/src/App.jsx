@@ -44,7 +44,7 @@ function App() {
         <Route path='/logged/editplace/:id' element={<EditPost cookies={cookies} setPosts={setPosts} posts={posts} />} />
         <Route path='/logged/addaplace' element={<AddPost cookies={cookies} setPosts={setPosts} />} />
         <Route path='/logged/user/:id' element={<User cookies={cookies} users={users} setUsers={setUsers} posts={posts} setPosts={setPosts} removeCookie={removeCookie} />} />
-        <Route path='/logged/user/edituser/:id' element={<EditUser cookies={cookies} users={users} setUsers={setUsers} setCookie={setCookie}/>} />
+        <Route path='/logged/user/edituser/:id' element={<EditUser cookies={cookies} removeCookie={removeCookie} users={users} setUsers={setUsers} setCookie={setCookie}/>} />
       </Routes>
 
 

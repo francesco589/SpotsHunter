@@ -6,7 +6,7 @@ import cookiesOptions from '../../assets/cookie.js'
 
 
 
-function EditUser({users, setUsers, cookies, setCookie}) {
+function EditUser({users, setUsers, cookies, setCookie, removeCookie}) {
 
     const [check, setCheck] = useState(
         {
